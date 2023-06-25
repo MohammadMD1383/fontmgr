@@ -5,5 +5,5 @@ pluginManagement {
     }
     
 }
-rootProject.name = "font"
 
+rootProject.name = "font"
