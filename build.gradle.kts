@@ -78,7 +78,7 @@ val generateCmakeReleaseBuild = task<Exec>("generateCmakeBuild") {
 	outputs.dir(releaseBuildDir)
 	
 	workingDir(releaseBuildDir)
-	commandLine("cmake", "-DCMAKE_BUILD_TYPE=Release", "..")
+	commandLine("cmake", "-DCMAKE_BUILD_TYPE=Release", "-GNinja" ,  "..")
 }
 
 val nativeLibsRelease = task<Exec>("nativeLibsRelease") {
@@ -88,7 +88,7 @@ val nativeLibsRelease = task<Exec>("nativeLibsRelease") {
 	
 	val releaseBuildDir = generateCmakeReleaseBuild.outputs.files.singleFile
 	workingDir(releaseBuildDir)
-	commandLine("make")
+	commandLine("ninja")
 	
 	outputs.file(releaseBuildDir.resolve("libnative.so"))
 }

@@ -5,6 +5,7 @@ import org.graalvm.nativeimage.hosted.RuntimeJNIAccess;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("unused")
 public class JniClassesFeature implements Feature {
 	@Override
 	public void beforeAnalysis(BeforeAnalysisAccess access) {
